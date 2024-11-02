@@ -1,4 +1,4 @@
-# Lab 2: Git Branches, Merges, and Pull - Understanding Git HEAD
+# Lab 2: Git Branches, Merges, Understanding Git HEAD and detached HEAD
 
 - **Step 1: Examine the current position of the HEAD**
 
