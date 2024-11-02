@@ -1,4 +1,4 @@
-# Step-by-Step Git Lab with Explanations
+# Lab1: Basic Git Flow
 
 ## Step 1: Create a New Repository in a Folder
 
