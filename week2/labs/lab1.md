@@ -67,3 +67,13 @@ git commit -m "Add more details to README"       # Commit the changes and see pr
 ```
 
 **Explanation**: In this step, we modify the README file again and commit the changes. When running `git commit`, the pre-commit hooks will automatically execute, checking for issues like trailing whitespace or formatting errors. If any issues are detected, they must be fixed before the commit can proceed.
+
+## Step 7: Add Another Commit and See Pre-Commit in Action
+
+```bash
+echo 'Additional project details' >> README.md  # Modify the README file again
+git add README.md                              # Stage the changes
+git commit -m "Add more details to README"       # Commit the changes and see pre-commit hooks in action
+```
+
+**Explanation**: In this step, we modify the README file again and commit the changes. When running `git commit`, the pre-commit hooks will automatically execute, checking for issues like trailing whitespace or formatting errors. If any issues are detected, they must be fixed before the commit can proceed.
