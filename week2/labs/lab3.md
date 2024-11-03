@@ -1,4 +1,4 @@
-# Working with Remote Repositories with GitHub
+# Working with Remote Repositories in GitHub
 
 In this lab, you’ll get hands-on experience using Git and GitHub for version control. Follow each step carefully and refer to the comments to understand each Git command.
 
