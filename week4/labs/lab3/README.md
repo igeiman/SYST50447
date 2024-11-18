@@ -1,5 +1,4 @@
 <h1 align="center">Enterprise code security 101: Getting started with GitHub Advanced Security</h1>
-<h5 align="center">Cuno Reijman - @equalizer999 | Daniel Meppiel - @danielmeppiel</h3>
 
 <p align="center">
   <a href="#learning-objectives">Learning Objectives</a> •
