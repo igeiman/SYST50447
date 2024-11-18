@@ -20,7 +20,6 @@ In this workshop, you will:
   - [Discover how to scale GitHub Advanced Security setup and policies for thousands of repositories](./workshop/3-discover-how-to-scale-github-advanced-security-setup-and-policies-for-thousands-of-repositories.md)
 
 ## :books: Resources
-- [Workshop deck](./workshop/resources/Enterprise%20code%20security%20101%20-%20Getting%20started%20with%20GitHub%20Advanced%20Security.pdf)
 
 - [GitHub Certifications - Resources](https://resources.github.com/learn/certifications)
 - [Microsoft Learn - GitHub Advanced Security Collection](https://gh.io/AAs60mv)
