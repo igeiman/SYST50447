@@ -25,6 +25,8 @@
 ### Run the Bootstrap Script
 
 - In the Codespace terminal, run the following command to start the Jenkins server:
+
+  [Jenkins Setup Script on GitHub](https://github.com/actions/importer-labs/blob/main/jenkins/bootstrap/setup.sh)
   ```bash
   ./jenkins/bootstrap/setup.sh
   ```
