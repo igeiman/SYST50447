@@ -21,11 +21,12 @@ You will modify your existing workflow to include a **matrix strategy**, enablin
 
 ### **Workflow Configuration**
 ```yaml
-name: CI Workflow
+name: CI NEW Workflow
 
 on:
   push:
-    branches: [ main ]
+    branches: 
+      - '**' # Match all branches
   pull_request:
     branches: [ main ]
 
@@ -58,7 +59,7 @@ jobs:
 
     - name: Run Tests
       run: |
-        pytest tests/test_app.py
+        pytest test_app.py
 ```
 **What You Learn**:
 - The matrix strategy runs the same workflow across multiple Linux distributions (ubuntu-latest, ubuntu-22.04, and ubuntu-20.04).
@@ -70,7 +71,40 @@ jobs:
 ---
 
 ## **Step 2: Add Dependent Jobs**
+We are going to add a new job that depends on the successful completion of the `build-and-test` job.
+The new job builds a docker image.
 Use the `needs` keyword to make the Docker image build dependent on the successful completion of tests.
+Add the Dockerfile below to the root of your repository.
+
+```
+# Use the official Python 3.12 image from the Docker Hub
+FROM python:3.12-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the requirements file into the container
+COPY requirements.txt .
+
+# Install the dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install pytest
+
+# Copy the rest of the application code into the container
+COPY *.py .
+
+# Expose the port the app runs on
+EXPOSE 5000
+
+# Command to run the application, making port 5000 externally accessible
+CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]
+```
+### Build the Docker image and create the container
+
+```
+docker build -t my-app:latest .
+docker run --rm my-app:latest pytest test_app.py
+```
 
 ### **Updated Workflow**
 ```yaml
@@ -101,7 +135,7 @@ Next, extend the pipeline to build and test a Docker container for the applicati
 ```yaml
   - name: Run Container Tests
     run: |
-      docker run --rm my-app:latest pytest tests/test_app.py
+      docker run --rm my-app:latest pytest test_app.py
 ```
 **What You Learn**:
 - **Container Testing**: Ensure your application works as expected in its containerized environment.
@@ -241,4 +275,3 @@ Your final pipeline includes:
 6. Implementing security best practices.
 
 This lab teaches advanced GitHub Actions techniques for real-world CI/CD scenarios, ensuring security and maintainability throughout. 🎓
-
